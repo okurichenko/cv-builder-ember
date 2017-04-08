@@ -26,6 +26,9 @@ export default Ember.Controller.extend({
           skillId: 1,
           level: 0,
         });
+      } else {
+        const filterSkill = this.get('filterSkills').findBy('skillId', 1);
+        this.get('filterSkills').removeObject(filterSkill);
       }
     },
 

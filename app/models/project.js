@@ -10,4 +10,5 @@ export default Model.extend({
   description: attr('string'),
   duration: attr('number'), // in months
   litsProject: attr('boolean'),
+  url: attr('string'),
 });

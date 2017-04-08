@@ -5,9 +5,10 @@ const {
   attr,
   belongsTo,
   hasMany,
+  Model
 } = DS;
 
-export default MF.Fragment.extend({
+export default Model.extend({
   skill: belongsTo('skill'),
   tools: hasMany('tool'),
   experience: attr('number'), // in months

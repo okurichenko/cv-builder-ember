@@ -11,8 +11,9 @@ Router.map(function() {
   this.route('secured', { path: '/' }, function() {
     this.route('dashboard', { path: '/' });
     this.route('developer', function() {
-      this.route('create-cv');
-      this.route('view-cv');
+      this.route('index', { path: ':developer_id' });
+      this.route('create-cv', { path: '/create-cv/:developer_id' });
+      this.route('view-cv', { path: '/view-cv/:cv_id' });
     });
   });
 });

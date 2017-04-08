@@ -20,7 +20,7 @@ export default Model.extend({
   languages: fragmentArray('language'),
   certificates: fragmentArray('certificate'),
   personalQualities: fragmentArray('personal-quality'),
-  skills: fragmentArray('developer-skill'),
+  developerSkills: hasMany('developer-skill'),
 
   projects: hasMany('developer-project'),
   cvs: hasMany('cv')

@@ -1,1 +1,11 @@
-{{outlet}}
+{{#bs-form formLayout=formLayout model=model.cv onSubmit=(action "submit") class='login-form' as |form|}}
+  {{form.element controlType="text" label="Name" placeholder="Name" property="name" required=true}}
+  {{form.element controlType="text" label="Comment" placeholder="Comment" property="comment"}}
+
+
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+      {{bs-button defaultText="Log in" type="primary" buttonType="submit" block=true}}
+    </div>
+  </div>
+{{/bs-form}}

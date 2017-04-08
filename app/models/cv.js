@@ -11,8 +11,10 @@ const {
 } = DS;
 
 export default Model.extend({
-  greeting: attr('string'),
   developer: belongsTo('developer'),
+  greeting: attr('string'),
+  name: attr('string'),
+  comment: attr('string'),
   skills: fragmentArray('developer-skill'),
   photo: fragment('photo'),
 });

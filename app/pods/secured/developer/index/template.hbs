@@ -1,1 +1,66 @@
-{{outlet}}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">{{developer.name}}</h1>
+      <div class="row">
+        <div class="col-sm-9">
+          <p class="developer-description">{{developer.description}}</p>
+        </div>
+        <div class="col-sm-3">
+          {{#slick-carousel class="ember-carousel"
+                            autoplay=false
+                            slidesToShow=1
+                            slidesToScroll=1
+                            dots=false
+                            arrows=true
+                            centerMode=true
+                            dots=true
+                            fade=true}}
+            <div><img src="http://lorempixel.com/128/128/" alt=""></div>
+            <div><img src="http://lorempixel.com/128/129/" alt=""></div>
+            <div><img src="http://lorempixel.com/128/127/" alt=""></div>
+          {{/slick-carousel}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {{#if matchedSkills.length}}
+            <div class="matched-skills">
+              <h3>Matched skills</h3>
+              {{#each matchedSkills as |matchedSkill|}}
+                <div>
+                  {{matchedSkill.skill.name}}
+                  | {{matchedSkill.experience}}m
+                  | {{matchedSkill.level}}
+                </div>
+              {{/each}}
+            </div>
+          {{/if}}
+          {{#if unmatchedSkills.length}}
+            <div class="unmatched-skills">
+              <h3>Unmatched skills</h3>
+              {{#each unmatchedSkills as |unmatchedSkill|}}
+                <div>
+                  {{unmatchedSkill.skill.name}}
+                  | {{unmatchedSkill.experience}}m
+                  | {{unmatchedSkill.level}}
+                </div>
+              {{/each}}
+            </div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {{#each developer.cvs as |cv|}}
+            <div class="panel panel-default">
+              <div class="panel-body">
+                Basic panel example
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,9 +33,12 @@
               <h3>Matched skills</h3>
               {{#each matchedSkills as |matchedSkill|}}
                 <div>
-                  {{matchedSkill.skill.name}}
-                  | {{matchedSkill.experience}}m
-                  | {{matchedSkill.level}}
+                  <b>{{matchedSkill.skill.name}}</b>
+                  ({{matchedSkill.experience}}m,
+                  {{level-number-to-text matchedSkill.level}}):
+                  {{#each matchedSkill.tools as |tool|}}
+                    {{tool.name}},
+                  {{/each}}
                 </div>
               {{/each}}
             </div>
@@ -47,7 +50,7 @@
                 <div>
                   <b>{{unmatchedSkill.skill.name}}</b>
                   ({{unmatchedSkill.experience}}m,
-                  {{unmatchedSkill.level}}):
+                  {{level-number-to-text unmatchedSkill.level}}):
                   {{#each unmatchedSkill.tools as |tool|}}
                     {{tool.name}},
                   {{/each}}

@@ -7,6 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login');
+  this.route('secured', function() {
+    this.route('dashboard');
+    this.route('developer', function() {
+      this.route('create-cv');
+      this.route('view-cv');
+    });
+  });
 });
 
 export default Router;

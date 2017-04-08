@@ -1,1 +1,79 @@
-{{outlet}}
+<div class="row">
+  <div class="col-xs-3">
+    <div class="search-input">
+      {{input value=searchQuery class='form-control' placeholder='Search...'}}
+    </div>
+  </div>
+  <div class="col-xs-9">
+    {{#each model as |developer|}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">{{developer.name}}</h4>
+              <p>{{developer.description}}</p>
+              {{#each developer.skills as |developerSkill|}}
+              <span class="label">
+                  {{developerSkill.skill.name}}
+                  | {{developerSkill.skill.experience}}m
+                  | {{developerSkill.skill.level}}
+                </span>
+              {{/each}}
+            </div>
+            <div class="media-right">
+              <img height="64" width="64" class="media-object" src="{{developer.photos.firstObject.url}}">
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            {{link-to 'Preview' 'secured.developer.index' developer.id class="col-xs-offset-2 col-xs-2"}}
+            {{link-to 'Create CV' 'secured.developer.create-cv' developer.id class="col-xs-offset-4 col-xs-2"}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="media">
+          <div class="media-left">
+            <img height="64" width="64" class="media-object" src="http://lorempixel.com/64/64/">
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Some one</h4>
+            <p>Great developer</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6 developer-skills">
+            <div class="developer-skill">
+              Ember JS | 24m | Middle
+            </div>
+            <div class="developer-skill">
+              Rails | 5m | Junior
+            </div>
+            <div class="developer-skill">
+              NodeJS | 12m | Middle
+            </div>
+          </div>
+          <div class="col-xs-6 developer-others">
+            <div class="developer-project-count">
+              Projects: 10
+            </div>
+            <div class="developer-project-count">
+              Projects: 10
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <a href="#" class="col-xs-offset-2 col-xs-2 btn btn-default">Preview</a>
+          <a href="#" class="col-xs-offset-4 col-xs-2 btn btn-success">Create CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

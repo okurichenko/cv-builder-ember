@@ -8,8 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('secured', function() {
-    this.route('dashboard');
+  this.route('secured', { path: '/' }, function() {
+    this.route('dashboard', { path: '/' });
     this.route('developer', function() {
       this.route('create-cv');
       this.route('view-cv');

@@ -12,8 +12,10 @@ const {
 export default Model.extend({
   name: attr('string'),
   description: attr('string'),
-  education: attr('string'),
+  position: attr('string'),
+  level: attr('string'),
 
+  education: fragmentArray('string'),
   photos: fragmentArray('photo'),
   languages: fragmentArray('language'),
   certificates: fragmentArray('certificate'),

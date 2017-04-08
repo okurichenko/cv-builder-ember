@@ -11,5 +11,5 @@ export default MF.Fragment.extend({
   skill: belongsTo('skill'),
   tools: hasMany('tool'),
   experience: attr('number'), // in months
-  level: attr('string'),
+  level: attr('number'),
 });

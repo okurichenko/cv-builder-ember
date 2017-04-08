@@ -13,7 +13,7 @@ export default Model.extend({
   name: attr('string'),
   description: attr('string'),
   position: attr('string'),
-  level: attr('string'),
+  level: attr('number'),
 
   education: fragmentArray('string'),
   photos: fragmentArray('photo'),

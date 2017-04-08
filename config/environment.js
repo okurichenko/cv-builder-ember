@@ -20,6 +20,13 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:oauth2-bearer',
+    authenticationRoute: 'login',
+    routeAfterAuthentication: 'secured.dashboard',
+    routeIfAlreadyAuthenticated: 'secured.dashboard'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

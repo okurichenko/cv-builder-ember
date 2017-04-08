@@ -11,9 +11,9 @@ export default Controller.extend({
   dashboardController: controller('secured.dashboard'),
   filterSkillsIds: reads('dashboardController.filterSkillsIds'),
 
-  matchedSkills: filter('developer.skills', function (ds) {
+  matchedSkills: filter('developer.developerSkills', function (ds) {
     return this.get('filterSkillsIds').includes(ds.get('skill.id'));
   }),
 
-  unmatchedSkills: setDiff('developer.skills', 'matchedSkills'),
+  unmatchedSkills: setDiff('developer.developerSkills', 'matchedSkills'),
 });

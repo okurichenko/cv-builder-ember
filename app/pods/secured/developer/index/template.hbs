@@ -18,9 +18,9 @@
                             centerMode=true
                             dots=true
                             fade=true}}
-            <div><img src="http://lorempixel.com/128/128/" alt=""></div>
-            <div><img src="http://lorempixel.com/128/129/" alt=""></div>
-            <div><img src="http://lorempixel.com/128/127/" alt=""></div>
+            <div><img src="http://lorempixel.com/128/128/people/{{developer.id}}" alt=""></div>
+            <div><img src="http://lorempixel.com/128/128/people/{{developer.id}}-2" alt=""></div>
+            <div><img src="http://lorempixel.com/128/128/people/{{developer.id}}-3" alt=""></div>
           {{/slick-carousel}}
         </div>
       </div>
@@ -45,9 +45,12 @@
               <h3>Unmatched skills</h3>
               {{#each unmatchedSkills as |unmatchedSkill|}}
                 <div>
-                  {{unmatchedSkill.skill.name}}
-                  | {{unmatchedSkill.experience}}m
-                  | {{unmatchedSkill.level}}
+                  <b>{{unmatchedSkill.skill.name}}</b>
+                  ({{unmatchedSkill.experience}}m,
+                  {{unmatchedSkill.level}}):
+                  {{#each unmatchedSkill.tools as |tool|}}
+                    {{tool.name}},
+                  {{/each}}
                 </div>
               {{/each}}
             </div>

@@ -14,9 +14,10 @@ export default Model.extend({
   description: attr('string'),
   position: attr('string'),
   level: attr('number'),
+  photo: attr('string'),
 
   education: fragmentArray('string'),
-  photos: fragmentArray('photo'),
+  // photos: fragmentArray('photo'),
   languages: fragmentArray('language'),
   certificates: fragmentArray('certificate'),
   personalQualities: fragmentArray('personal-quality'),
